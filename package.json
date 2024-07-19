@@ -1,16 +1,19 @@
 {
   "name": "strapi-api",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
   "scripts": {
+    "build": "strapi build",
+    "deploy": "strapi deploy",
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi",
-    "deploy": "strapi deploy"
+    "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-cloud": "4.25.3",
     "@strapi/plugin-i18n": "4.25.3",
@@ -21,17 +24,14 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
+    "strapi-plugin-vercel-deploy": "^1.4.0",
     "styled-components": "5.3.3"
   },
-  "author": {
-    "name": "A Strapi developer"
+  "packageManager": "yarn@4.3.1",
+  "engines": {
+    "node": "18.x"
   },
   "strapi": {
     "uuid": "d6366d2a-50c2-4bf8-9a92-2dc3a9d2d6af"
-  },
-  "engines": {
-    "node": ">=18.0.0 <=20.x.x",
-    "npm": ">=6.0.0"
-  },
-  "license": "MIT"
+  }
 }
