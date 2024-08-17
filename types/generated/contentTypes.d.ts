@@ -809,7 +809,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     >;
     tags: Attribute.Relation<
       'api::project.project',
-      'oneToMany',
+      'manyToMany',
       'api::tag.tag'
     >;
     createdAt: Attribute.DateTime;
@@ -867,15 +867,16 @@ export interface ApiTagTag extends Schema.CollectionType {
     singularName: 'tag';
     pluralName: 'tags';
     displayName: 'tags';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    project: Attribute.Relation<
+    projects: Attribute.Relation<
       'api::tag.tag',
-      'manyToOne',
+      'manyToMany',
       'api::project.project'
     >;
     createdAt: Attribute.DateTime;
